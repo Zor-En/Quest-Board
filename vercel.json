@@ -1,5 +1,10 @@
 {
-    "routes": [
-      { "src": "/(.*)", "dest": "/" }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    { "src": "/client/**", "use": "@vercel/static" },
+    { "src": "/server/**", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}

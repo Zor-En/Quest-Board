@@ -823,7 +823,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"client": 0
+/******/ 			"main": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
