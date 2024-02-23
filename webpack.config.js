@@ -1,7 +1,7 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-  mode: production,
+  mode: 'production',
     entry: './client/index.js',
     output: {
         path: path.join(__dirname, 'build'),
