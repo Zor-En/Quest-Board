@@ -36,14 +36,14 @@ module.exports = {
             template: './client/index.html'
         })
     ],
-      devServer: {
-        static: {
-          publicPath :'/build',
-          directory:  path.resolve(__dirname, 'build'),
-        },
-        open: true,
-        proxy: {
-          '/': 'http://localhost:3000',
-        },
-      },
+      // devServer: {
+      //   static: {
+      //     publicPath :'/build',
+      //     directory:  path.resolve(__dirname, 'build'),
+      //   },
+      //   open: true,
+      //   proxy: {
+      //     '/': 'http://localhost:3000',
+      //   },
+      // },
 }
