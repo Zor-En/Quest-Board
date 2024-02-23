@@ -7,6 +7,12 @@ module.exports = {
         path: path.join(__dirname, 'build'),
         filename: 'build.js'
     },
+    resolve: {
+      modules: [
+        path.resolve(__dirname, 'client'),
+        'node_modules'
+      ]
+    },
     module: {
         rules: [
           {
