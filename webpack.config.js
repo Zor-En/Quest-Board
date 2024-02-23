@@ -43,7 +43,7 @@ module.exports = {
     open: true,
     proxy: {
       '/api': {
-        target: `http://localhost:${PORT}`,
+        target: `http://localhost:3000`,
         pathRewrite: { '^/api': '' },
       },
     },
