@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'OldSchoolAdventures';
-  src: url('./assets/OldSchoolAdventures-42j9.ttf') format('truetype');
+  src: url('../public/OldSchoolAdventures-42j9.ttf') format('truetype');
 }
 
 * {
@@ -34,7 +34,7 @@
 
 
 .background {
-  background-image: url('./assets/questboard_blur.png');
+  background-image: url('../public/questboard_blur.png');
   height: 100%; 
   width: 100%; 
   background-position: center;
@@ -75,7 +75,7 @@
 
 .task-card-1 {
   height: 25%;
-  background-image: url('./assets/paper1.png');
+  background-image: url('../public/paper1.png');
   background-repeat: no-repeat;
   aspect-ratio: 459 / 334;
   background-size: contain;
@@ -85,7 +85,7 @@
   margin-top: 10%;
 }
 .task-card-2 {
-  background-image: url('./assets/paper2.png');
+  background-image: url('../public/paper2.png');
   background-repeat: no-repeat;
   aspect-ratio: 321 / 401;
   background-size: contain;
@@ -95,7 +95,7 @@
   margin-top: 10%;
 }
 .task-card-3 {
-  background-image: url('./assets/paper3.png');
+  background-image: url('../public/paper3.png');
   background-repeat: no-repeat;
   aspect-ratio: 320 / 321;
   background-size: contain;
@@ -108,7 +108,7 @@
 }
 
 .task-card-4 {
-  background-image: url('./assets/paper4.png');
+  background-image: url('../public/paper4.png');
   background-repeat: no-repeat;
   aspect-ratio: 321 / 464;
   background-size: contain;
@@ -119,7 +119,7 @@
   font-size: 1.4rem;
 }
 .task-card-5 {
-  background-image: url('./assets/paper5.png');
+  background-image: url('../public/paper5.png');
   background-repeat: no-repeat;
   aspect-ratio: 321 / 401;
   background-size: contain;
@@ -131,7 +131,7 @@
 }
 
 .task-card-6 {
-  background-image: url('./assets/paper6.png');
+  background-image: url('../public/paper6.png');
   background-repeat: no-repeat;
   aspect-ratio: 320 / 321;
   background-size: contain;
@@ -143,7 +143,7 @@
 }
 
 .task-card-7 {
-  background-image: url('./assets/paper7.png');
+  background-image: url('../public/paper7.png');
   background-repeat: no-repeat;
   aspect-ratio: 321 / 464;
   background-size: contain;
@@ -156,7 +156,7 @@
 
 .task-card-8 {
   height: 25%;
-  background-image: url('./assets/paper8.png');
+  background-image: url('../public/paper8.png');
   background-repeat: no-repeat;
   aspect-ratio: 459 / 334;
   background-size: contain;
