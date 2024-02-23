@@ -1,49 +1,48 @@
-const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   mode: process.env.NODE_ENV,
-    entry: './client/index.js',
-    output: {
-        path: path.join(__dirname, 'build'),
-        filename: 'build.js'
-    },
-    module: {
-        rules: [
-          {
-            test: /.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: ['@babel/preset-env', '@babel/preset-react']
-              }
-            },
-          },
-          {
-            test: /.(css|scss)$/,
-            exclude: /node_modules/,
-            use: [{
-              loader:'style-loader'
-            }, 
-            {
-              loader:'css-loader'
-            },],
+  entry: {
+    client: './client/index.js',
+    server: './server/server.js', // New entry point for server
+  },
+  output: {
+    path: path.join(__dirname, 'build'),
+    filename: '[name].js', // Using [name] placeholder to create multiple output files
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
-        ],
+        },
       },
-      plugins: [
-        new HTMLWebpackPlugin({
-            template: './client/index.html'
-        })
+      {
+        test: /\.(css|scss)$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'],
+      }
     ],
-      devServer: {
-        static: {
-          publicPath :'/build',
-          directory:  path.resolve(__dirname, 'build'),
-        },
-        open: true,
-        proxy: {
-          '/': 'http://localhost:3000',
-        },
-      },
-}
+  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: './client/index.html'
+    })
+  ],
+  devServer: {
+    static: {
+      publicPath: '/build',
+      directory: path.resolve(__dirname, 'build'),
+    },
+    open: true,
+    proxy: {
+      '/': 'http://localhost:3000',
+    },
+  },
+};
