@@ -1,17 +1,11 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-  mode: 'production',
+  mode: process.env.NODE_ENV,
     entry: './client/index.js',
     output: {
         path: path.join(__dirname, 'build'),
         filename: 'build.js'
-    },
-    resolve: {
-      modules: [
-        path.resolve(__dirname, 'client'),
-        'node_modules'
-      ]
     },
     module: {
         rules: [
@@ -42,14 +36,14 @@ module.exports = {
             template: './client/index.html'
         })
     ],
-      // devServer: {
-      //   static: {
-      //     publicPath :'/build',
-      //     directory:  path.resolve(__dirname, 'build'),
-      //   },
-      //   open: true,
-      //   proxy: {
-      //     '/': 'http://localhost:3000',
-      //   },
-      // },
+      devServer: {
+        static: {
+          publicPath :'/build',
+          directory:  path.resolve(__dirname, 'build'),
+        },
+        open: true,
+        proxy: {
+          '/': 'http://localhost:3000',
+        },
+      },
 }
