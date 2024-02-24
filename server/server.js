@@ -4,6 +4,7 @@ const apiRouter = require('./routes/api');
 const session = require('express-session')
 const pool = require('./models/QuestBoardModels')
 const PostgresSession = require('connect-pg-simple')(session)
+const path = require('path');
 
 const PORT = 3000;
 const app = express();
@@ -11,6 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(__dirname, '..', 'build')));
   
 app.use(session({
   //session method creates an OBJECT 

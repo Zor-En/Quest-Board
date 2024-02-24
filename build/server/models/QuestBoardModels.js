@@ -1,0 +1,1 @@
+const{Pool}=require("pg"),PG_URI="postgres://prhyrelt:3mutpx_zmscP0OeBKSmzuA8GSj53wdXg@mahmud.db.elephantsql.com/prhyrelt",pool=new Pool({connectionString:PG_URI});module.exports={pool,query:(o,e,l)=>(console.log("executed query",o),pool.query(o,e,l))};
