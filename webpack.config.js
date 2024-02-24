@@ -1,5 +1,7 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   mode: 'production',
     entry: './client/index.js',
@@ -34,6 +36,11 @@ module.exports = {
       plugins: [
         new HTMLWebpackPlugin({
             template: './client/index.html'
+        }),
+        new CopyPlugin({
+          patterns: [
+            { from: "server", to: "server" }
+          ]
         })
     ],
       devServer: {
@@ -43,7 +50,7 @@ module.exports = {
         },
         open: true,
         proxy: {
-          '/': 'http://localhost:3000',
+          '/': 'http://localhost:3000' // Change this to the URL of your deployed server
         },
       },
 }
