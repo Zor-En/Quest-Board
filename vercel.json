@@ -1,14 +1,13 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "client/(.*)",
-            "use": "@vercel/static",
-            "config": {
-              "public": "client",
-              "distDir": "client"
-            }
-          },
+      {
+        "src": "client/(.*)",
+        "use": "@vercel/static",
+        "config": {
+          "public": "client"
+        }
+      },
       {
         "src": "server/server.js",
         "use": "@vercel/node"
@@ -21,7 +20,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "client/index.html"
+        "dest": "/client/$1"
       }
     ]
   }
